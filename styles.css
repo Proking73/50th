@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --white1: hsl(0, 0%, 60%);
+    --white2: hsl(0, 0%, 90%);
+    --grey1: hsl(0, 0%, 30%);
+    --grey2: hsl(0, 0%, 60%);
+    --gold1: hsl(45, 75%, 50%);
+    --gold2: hsl(45, 75%, 80%);
+}
+body, html {
+    font-size: 1vmin;
+    background: black;
+    height:100%;
+    position: relative;
+}
+header {
+    display:flex;
+    flex-direction: column;
+    width: 75%;
+    height: fit-content;
+    color: white;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+.happy, .birthday {
+    font-family: 'Dancing script';
+    font-size: clamp(10em, 15em, 30em);
+}
+.happy {
+    text-align: left;
+}
+.birthday {
+    margin-top: -2.5%;
+    text-align: right;
+}
+.gold {
+    font-size: clamp(20em, 30em, 40em);
+    background-image: linear-gradient(
+	to right,
+	#462523 0,
+    #c3b33b 22%, 
+	#bba849 45%,
+	#f6f2c0 50%,
+	#bba849 55%,
+	#c3b33b 78%,
+	#462523 100%
+	);
+   color:transparent;
+   -webkit-background-clip:text;
+    font-family: 'Amaranth';
+    text-align: center;
+    line-height: 65%;
+}
+.gold>span {
+    font-size: clamp(10rem, 15rem, 20rem);
+}
+.balloon:nth-child(1) {
+    border-radius: 100%;
+    border: 0.15em solid var(--white1);
+    background:radial-gradient(ellipse at 65% 25%, var(--white2), var(--white1));
+    height:22.5rem;
+    width:20rem;
+    position: absolute;
+    top: 5em;
+}
+.balloon:nth-child(2) {
+    border-radius: 100%;
+    border: 0.15em solid var(--gold1);
+    background:radial-gradient(ellipse at 65% 25%, var(--gold2), var(--gold1));
+    height:22.5rem;
+    width:20rem;
+    position: absolute;
+    top: 15em;
+}
