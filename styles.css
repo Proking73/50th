@@ -5,6 +5,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
+    cursor: url("https://cdn.custom-cursor.com/packs/291/medium/Birthday.png");
 }
 :root {
     --white1: hsl(0, 0%, 60%);
@@ -45,7 +47,7 @@ header {
     align-self: end;
     justify-self: left;
     opacity: 0;
-    animation: birthday var(--speed) cubic-bezier(0.65,0.05,0.65,1.62) 4s 1 forwards;
+    animation: birthday var(--speed) cubic-bezier(0.65,0.05,0.65,1.62) 3s 1 forwards;
 }
 .gold {
     z-index: 1;
@@ -66,7 +68,7 @@ header {
     text-align: center;
     line-height: 65%;
     align-self:center;
-    animation: goldnum var(--speed) ease-in-out var(--speed) 1 forwards;
+    animation: goldnum 1s ease-in-out var(--speed) 1 forwards;
     opacity: 0;
 }
 .gold>span {
