@@ -16,6 +16,7 @@
     --gold1: hsl(45, 75%, 50%);
     --gold2: hsl(45, 75%, 80%);
     --speed: 2s;
+    --arrow: arrow 2s cubic-bezier(0.65,0.05,0.65,1.62) 6s 1 forwards;
 }
 body, html {
     font-size: 1vmin;
@@ -24,6 +25,7 @@ body, html {
     position: relative;
 }
 header {
+    margin-top: 2%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 75%;
@@ -47,29 +49,36 @@ header {
     align-self: end;
     justify-self: left;
     opacity: 0;
-    animation: birthday var(--speed) cubic-bezier(0.65,0.05,0.65,1.62) 3s 1 forwards;
+    animation: birthday var(--speed) cubic-bezier(0.65,0.05,0.65,1.62) 3.3s 1 forwards;
 }
 .gold {
     z-index: 1;
     font-size: clamp(20em, 30em, 40em);
     background-image: linear-gradient(
 	to right,
-	#462523 0,
     #c3b33b 22%, 
 	#bba849 45%,
 	#f6f2c0 50%,
 	#bba849 55%,
-	#c3b33b 78%,
-	#462523 100%
+	#c3b33b 78%
 	);
-   color:transparent;
-   -webkit-background-clip:text;
+    -webkit-background-clip: text;
+    color:transparent;
     font-family: 'Amaranth';
     text-align: center;
     line-height: 65%;
     align-self:center;
-    animation: goldnum 1s ease-in-out var(--speed) 1 forwards;
+    animation: goldnum 5s ease-in-out var(--speed) 1 forwards;
     opacity: 0;
+    background-size: 100%;
+    /*border: 0.5rem solid goldenrod;
+    border-radius: 100rem;
+    width: fit-content;
+    aspect-ratio: 1/1;
+    display: flex;
+    padding: 10%;
+    align-items: center;
+    justify-content: center;*/
 }
 .gold>span {
     font-size: clamp(10rem, 15rem, 20rem);
@@ -107,15 +116,32 @@ header {
     }
 }
 @keyframes goldnum {
-    from {
-        opacity: 0;
+    0% {
         transform: scale(2, 2);
-        background-size: 100%;
+        opacity: 0;
     }
-    to {
-        opacity: 1;
+    30% {
         transform: scale(1, 1);
-        background-size: 300%;
+        opacity: 1;
+    }
+    50% {
+        background-size: 150%;
+    }
+    60% {
+        background-size: 175%;
+    }
+    70% {
+        background-size: 200%;
+    }
+    80% {
+        background-size: 225%;
+    }
+    90% {
+        background-size: 200%;
+    }
+    100% {
+        background-size: 100%;
+        opacity: 1;
     }
 }
 @keyframes birthday {
@@ -127,4 +153,34 @@ header {
         transform: translateX(0%);
         opacity: 1;
     }
+}
+
+header::after {
+    color: white;
+    position: absolute;
+    font-size: clamp(5em, 7.5em, 15em);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    content: "\27A1";
+    left:50%;
+    top: 125%;
+    opacity: 0;
+    animation: var(--arrow);
+}
+
+@keyframes arrow {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) rotate(90deg);
+    }
+    to {
+        opacity: 0.9;
+        transform: translateY(0%) rotate(90deg);
+    }
+}
+
+.reveal {
+    opacity: 0;
+}
+.reveal.active {
+    opacity: 1;
 }
