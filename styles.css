@@ -34,7 +34,7 @@ html {
 body {
     display: flex;
     justify-content: center;
-    height: 800vh;
+    height: 700vh;
     scroll-behavior: smooth;
 }
 header {
@@ -306,6 +306,7 @@ section > div > h1 {
     font-size: clamp(5em, 7.5em, 15em);
     font-weight: bolder;
     line-height: 150%;
+    text-shadow: rgb(136, 136, 136) 1px 1px 0px;
 }
 section > div > p {
     font-size: clamp(3em, 4.5em, 9em);
@@ -338,4 +339,33 @@ section.one {
 }
 section.two {
     top: calc(105vh + var(--s-height) * 2);
+}
+section.three {
+    top: calc(105vh + var(--s-height) * 4);
+}
+section.four {
+    top: calc(105vh + var(--s-height) * 6);
+}
+section.five {
+    top: calc(105vh + var(--s-height) * 8);
+}
+section.six {
+    top: calc(105vh + var(--s-height) * 10);
+}
+section.seven {
+    top: calc(105vh + var(--s-height) * 12);
+}
+section.eight {
+    top: calc(105vh + var(--s-height) * 14);
+}
+section.nine {
+    top: calc(105vh + var(--s-height) * 16);
+}
+section.ten {
+    top: calc(105vh + var(--s-height) * 18  );
+}
+section.eleven {
+    top: calc(105vh + var(--s-height) * 20);
+    grid-template-columns: 1fr;
+    text-align: center;
 }

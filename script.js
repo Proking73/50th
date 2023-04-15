@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 300;
+        var elementVisible = windowHeight/2;
         if (elementTop < windowHeight - elementVisible) {
           reveals[i].classList.add("active");
         } else {
